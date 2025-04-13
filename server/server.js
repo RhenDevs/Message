@@ -1,41 +1,27 @@
-import express, { urlencoded } from 'express'
-import cors from 'cors'
-import dotenv from 'dotenv'
 import mongoose from 'mongoose'
+import dotenv from 'dotenv'
+import colors from 'colors'
 import path from 'path'
 import { fileURLToPath } from 'url'
+import app from './app.js'
+import http from 'http'
 
 // Configuration
+dotenv.config();
+colors.enable();
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-dotenv.config()
-const app = express();
 const URI = process.env.MONGO_URI;
+const PORT = process.env.PORT;
 
-// Middleware
-app.use(cors());
-app.use(express.json());
-app.use(urlencoded({extended: true}))
 
-const connect_Database = async () => {
-    try {
+// Server
+const server = http.createServer(app);
+server.listen(PORT,()=>{
+    console.log("\n\nLINK: ".cyan + ("http://localhost:"+PORT+"/api").yellow.italic.underline + "\n\n");
+})
 
-        await mongoose.connect(URI, {
-            useNewUrlParser: true,
-            useUnifiedTopology: true
-        });
-        console.log('MongoDB connected');
+// DATABASE
+mongoose.connect(URI);
 
-    } catch (error) {
-        console.error('Database Connection Error:', error);
-        process.exit(1);
-    }
-};
-
-connect_Database();
-
-app.get('/', (req, res) => {
-  res.send('Hello from Express!');
-});
-
-export default app
+export default server
