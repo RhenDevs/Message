@@ -1,28 +1,28 @@
+import style from './Navigation.module.css' 
 
-function Sidebar(){
+export default function Navigation(){
+    return (
 
-    return(
+        <aside className={style.chatSidebar}>
 
-        <aside className="chat-sidebar">
-
-            <a href="#" className="chat-sidebar-logo">
+            <a href="#" className={style.chatSidebarLogo}> 
                 <i className="ri-chat-1-fill"></i>
             </a>
 
-            <ul className="chat-sidebar-menu">
+            <ul className={style.chatSidebarMenu}> 
 
-                <li className="active"><a href="#" data-title="Chats"><i className="ri-chat-3-line"></i></a></li>
+                <li className={style.active}><a href="#" data-title="Chats"><i className="ri-chat-3-line"></i></a></li>
                 <li><a href="#" data-title="Contacts"><i className="ri-contacts-line"></i></a></li>
                 <li><a href="#" data-title="Documents"><i className="ri-folder-line"></i></a></li>
                 <li><a href="#" data-title="Settings"><i className="ri-settings-line"></i></a></li>
 
-                <li className="chat-sidebar-profile">
+                <li className={style.chatSidebarProfile}>
 
-                    <button type="button" className="chat-sidebar-profile-toggle">
-                        <img src="/img/RHENZY.jpg" alt="" />
+                    <button type="button" className={style.chatSidebarProfileToggle}>
+                        <img src="img/RHENZY.jpg" alt=""/>
                     </button>
 
-                    <ul className="chat-sidebar-profile-dropdown">
+                    <ul className={style.chatSidebarProfileDropdown}>
                         <li><a href="#"><i className="ri-user-line"></i> Profile</a></li>
                         <li><a href="#"><i className="ri-logout-box-line"></i> Logout</a></li>
                     </ul>
@@ -32,9 +32,5 @@ function Sidebar(){
             </ul>
 
         </aside>
-
     )
-
 }
-
-export default Sidebar

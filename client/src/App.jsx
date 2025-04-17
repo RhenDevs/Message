@@ -1,11 +1,21 @@
-import Chat from "./Pages/chat/index/chat.jsx";
+import Navigation from "./Components/Navigation/Navigation.jsx"
+import ChatList from "./Components/ChatList/ChatList.jsx"
 
 function App() {
   return (
-    <>
-      <Chat />
-    </>
-  );
+
+    <section className="chat-section">
+
+        <div className="chat-container">
+
+          <Navigation />
+          <ChatList />
+
+        </div>
+
+    </section>
+    
+  )
 }
 
-export default App;
+export default App
