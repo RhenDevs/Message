@@ -37,24 +37,13 @@ body {
 
 
 
-/* start: Sidebar */
-
-/* end: Sidebar */
-
-
-
-/* start: Content side */
-
-/* end: Content side */
-
-
-
 /* start: Conversation */
 .conversation {
     background-color: var(--slate-100);
-    height: 100%;
+    height: 80%;
     padding-left: 256px;
-    display: none;
+    margin-left: 60px;
+    display: block;
 }
 .conversation.active {
     display: flex;
@@ -78,7 +67,7 @@ body {
     cursor: pointer;
     color: var(--slate-400);
     margin-right: 12px;
-    display: none;
+    display: block;
 }
 .conversation-back:hover {
     background-color: var(--slate-100);
@@ -440,7 +429,7 @@ body {
         height: 48px;
     }
     .chat-sidebar-logo {
-        display: none;
+        display: block;
     }
     .chat-sidebar-menu {
         flex-direction: row;
@@ -503,7 +492,7 @@ body {
         display: flex;
     }
     .conversation-default.active {
-        display: none;
+        display: block;
         padding: 16px;
     }
 }

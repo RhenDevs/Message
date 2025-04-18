@@ -126,8 +126,14 @@
 }
 .contentMessageMore {
     text-align: right;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    justify-content: space-evenly;
 }
 .contentMessageUnread {
+    width: 48%;
+    margin-bottom: 3px;
     font-size: 12px;
     font-weight: 500;
     color: var(--white);
