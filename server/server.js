@@ -14,7 +14,6 @@ const __dirname = path.dirname(__filename);
 const URI = process.env.MONGO_URI;
 const PORT = process.env.PORT;
 
-
 // Server
 const server = http.createServer(app);
 server.listen(PORT,()=>{
